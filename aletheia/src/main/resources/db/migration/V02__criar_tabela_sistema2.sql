@@ -1,0 +1,7 @@
+CREATE TABLE sistema (
+    codigo NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    nome VARCHAR2(50) NOT NULL
+);
+
+ALTER TABLE sistema
+ADD CONSTRAINT sistemap_pk PRIMARY KEY (codigo);
