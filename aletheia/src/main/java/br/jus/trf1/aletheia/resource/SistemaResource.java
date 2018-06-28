@@ -42,8 +42,9 @@ public class SistemaResource {
 	}
 	
 	@GetMapping("/{codigo}")
-	public Sistema buscarPeloCodigo(@PathVariable Long codigo){
-		return sistemaRepository.findOne(codigo);
+	public ResponseEntity<Sistema> buscarPeloCodigo(@PathVariable Long codigo){
+		Sistema sistema = sistemaRepository.findOne(codigo);
+		return sistema != null ? ResponseEntity.ok(sistema) : ResponseEntity.notFound().build();
 	}
 
 }
