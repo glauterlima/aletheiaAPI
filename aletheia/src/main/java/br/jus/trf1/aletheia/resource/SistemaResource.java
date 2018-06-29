@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class SistemaResource {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Sistema> criar(@RequestBody Sistema sistema, HttpServletResponse response){
+	public ResponseEntity<Sistema> criar(@Valid @RequestBody Sistema sistema, HttpServletResponse response){
 		Sistema sistemaSalvo = sistemaRepository.save(sistema);	
 		
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{codigo}")
