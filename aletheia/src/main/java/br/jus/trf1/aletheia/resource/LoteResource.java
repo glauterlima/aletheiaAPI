@@ -20,54 +20,54 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.jus.trf1.aletheia.event.RecursoCriadoEvent;
-import br.jus.trf1.aletheia.model.Sistema;
-import br.jus.trf1.aletheia.repository.SistemaRepository;
-import br.jus.trf1.aletheia.service.SistemaService;
+import br.jus.trf1.aletheia.model.Lote;
+import br.jus.trf1.aletheia.repository.LoteRepository;
+import br.jus.trf1.aletheia.service.LoteService;
 
 @RestController
-@RequestMapping("/sistemas")
-public class SistemaResource {
+@RequestMapping("/lotes")
+public class LoteResource {
 	
 	@Autowired
-	private SistemaRepository sistemaRepository;
+	private LoteRepository loteRepository;
 	
 	@Autowired
 	private ApplicationEventPublisher publisher;
 	
 	@Autowired
-	private SistemaService sistemaService;
+	private LoteService loteService;
 	
 	@GetMapping
-	public List<Sistema> listar() {
-		return sistemaRepository.findAll();
+	public List<Lote> listar() {
+		return loteRepository.findAll();
 	}
 	
 	@PostMapping
-	public ResponseEntity<Sistema> criar(@Valid @RequestBody Sistema sistema, HttpServletResponse response){
-		Sistema sistemaSalvo = sistemaRepository.save(sistema);	
+	public ResponseEntity<Lote> criar(@Valid @RequestBody Lote lote, HttpServletResponse response){
+		Lote loteSalvo = loteRepository.save(lote);	
 		
-		publisher.publishEvent(new RecursoCriadoEvent(this, response, sistemaSalvo.getCodigo()));
+		publisher.publishEvent(new RecursoCriadoEvent(this, response, loteSalvo.getCodigo()));
 		
-		return ResponseEntity.status(HttpStatus.CREATED).body(sistemaSalvo); 
+		return ResponseEntity.status(HttpStatus.CREATED).body(loteSalvo); 
 	}
 	
 	@GetMapping("/{codigo}")
-	public ResponseEntity<Sistema> buscarPeloCodigo(@PathVariable Long codigo){
-		Sistema sistema = sistemaRepository.findOne(codigo);
-		return sistema != null ? ResponseEntity.ok(sistema) : ResponseEntity.notFound().build();
+	public ResponseEntity<Lote> buscarPeloCodigo(@PathVariable Long codigo){
+		Lote lote = loteRepository.findOne(codigo);
+		return lote != null ? ResponseEntity.ok(lote) : ResponseEntity.notFound().build();
 	}
 	
 	@DeleteMapping("/{codigo}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable Long codigo){
-		sistemaRepository.delete(codigo);
+		loteRepository.delete(codigo);
 	}
 	
 	@PutMapping("/{codigo}")
-	public ResponseEntity<Sistema> atualizar(@PathVariable Long codigo, @Valid @RequestBody Sistema sistema) {
+	public ResponseEntity<Lote> atualizar(@PathVariable Long codigo, @Valid @RequestBody Lote lote) {
 	
-		Sistema sistemaSalvo = sistemaService.atualizar(codigo, sistema);
-		return ResponseEntity.ok(sistemaSalvo);
+		Lote loteSalvo = loteService.atualizar(codigo, lote);
+		return ResponseEntity.ok(loteSalvo);
 		
 	}
 

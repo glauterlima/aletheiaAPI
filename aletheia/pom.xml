@@ -45,12 +45,19 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- Oracle Driver -->
+		<!-- Oracle Driver 
 		<dependency> 
     		<groupId>com.oracle</groupId>
     		<artifactId>ojdbc14</artifactId>
     		<version>10.2.0.4.0</version>
     		<scope>runtime</scope>
+		</dependency>-->
+		
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		
 		<!-- Migracoes - Flyway -->
