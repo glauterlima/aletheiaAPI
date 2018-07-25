@@ -1,0 +1,22 @@
+package br.jus.trf1.aletheia.model;
+
+import java.time.LocalDate;
+
+public class Demanda {
+	
+	private Long codigo;
+	private Sistema sistema;
+	private Pessoa pessoa;
+	private Lote lote;
+	private Plataforma plataforma;
+	private Tipo tipo;
+	private Contagem contagem;
+	private LocalDate data;
+	private Status status;
+	private String obs;
+	
+	
+	
+	
+
+}

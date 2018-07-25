@@ -1,0 +1,13 @@
+CREATE TABLE contagem (
+	codigo BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
+	codigo_demanda BIGINT(20) NOT NULL,
+	total_pf_bruto DECIMAL(10,2) NOT NULL,
+	total_pf_liquido DECIMAL(10,2) NOT NULL,
+	total_pf_plataforma DECIMAL(10,2) NOT NULL,
+	status VARCHAR(20) NOT NULL,
+	preco DECIMAL(10,2) NOT NULL,
+	FOREIGN KEY (codigo_demanda) REFERENCES demanda(codigo),
+	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO sistema (nome) values ('SARH');

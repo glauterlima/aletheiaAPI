@@ -1,0 +1,5 @@
+package br.jus.trf1.aletheia.resource;
+
+public class LoteResource {
+
+}

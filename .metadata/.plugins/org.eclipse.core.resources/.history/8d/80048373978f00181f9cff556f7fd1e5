@@ -1,0 +1,37 @@
+package br.jus.trf1.aletheia.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class Demanda {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long codigo;
+	
+	private Sistema sistema;
+	
+	private Pessoa pessoa;
+	
+	private Lote lote;
+	
+	private Plataforma plataforma;
+	
+	private Tipo tipo;
+	
+	private Contagem contagem;
+	
+	private LocalDate data;
+	
+	private Status status;
+	
+	private String obs;
+	
+	
+	
+	
+
+}
