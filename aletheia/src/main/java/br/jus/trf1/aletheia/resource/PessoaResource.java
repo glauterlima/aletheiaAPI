@@ -1,6 +1,7 @@
 package br.jus.trf1.aletheia.resource;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -32,6 +33,11 @@ public class PessoaResource {
 	
 	@Autowired
 	private PessoaService pessoaService;
+	
+	@GetMapping
+	public List<Pessoa> listar() {
+		return pessoaRepository.findAll();
+	}
 	
 	@PostMapping
 	public ResponseEntity<Pessoa> criar(@Valid @RequestBody Pessoa pessoa, HttpServletResponse response) {

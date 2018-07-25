@@ -21,6 +21,8 @@ public class Demanda {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codigo;
 	
+	private String nome;	
+	
 	@ManyToOne
 	@JoinColumn(name = "codigo_sistema")
 	private Sistema sistema;
@@ -57,6 +59,22 @@ public class Demanda {
 	
 	private BigDecimal valor;
 
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+	
 	public Long getCodigo() {
 		return codigo;
 	}
@@ -143,14 +161,6 @@ public class Demanda {
 
 	public void setStatus(Status status) {
 		this.status = status;
-	}
-
-	public String getObs() {
-		return observacao;
-	}
-
-	public void setObs(String observacao) {
-		this.observacao = observacao;
 	}
 
 	public BigDecimal getValor() {
