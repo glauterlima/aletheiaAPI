@@ -2,6 +2,7 @@ package br.jus.trf1.aletheia.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "demanda")
@@ -21,42 +23,54 @@ public class Demanda {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long codigo;
 	
+	@NotNull
 	private String nome;	
 	
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "codigo_sistema")
 	private Sistema sistema;
 	
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "codigo_pessoa")
 	private Pessoa pessoa;
 	
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "codigo_lote")
 	private Lote lote;
 	
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private Plataforma plataforma;
 	
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private Tipo tipo;
 	
+	@NotNull
 	@Column(name = "total_pf_bruto")
 	private BigDecimal totalPfBruto;
 	
+	@NotNull
 	@Column(name = "total_pf_liquido")
 	private BigDecimal totalPfLiquido;
 	
+	@NotNull
 	@Column(name = "total_pf_plataforma")
 	private BigDecimal totalPfPlataforma;
 	
+	@NotNull
 	private LocalDate data;
 	
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private Status status;
 	
 	private String observacao;
 	
+	@NotNull
 	private BigDecimal valor;
 
 	public String getNome() {
