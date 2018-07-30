@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler"/>
 <fullyQualifiedTypeName name="javax.validation.constraints.NotNull"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="org.springframework.context.ApplicationEventPublisher"/>
 <fullyQualifiedTypeName name="br.jus.trf1.aletheia.event.RecursoCriadoEvent"/>
 <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
@@ -20,4 +19,8 @@
 <fullyQualifiedTypeName name="javax.persistence.Embedded"/>
 <fullyQualifiedTypeName name="javax.persistence.EnumType"/>
 <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="javax.persistence.Transient"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ExceptionHandler"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
