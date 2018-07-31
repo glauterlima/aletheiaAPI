@@ -1,0 +1,5 @@
+package br.jus.trf1.aletheia.repository.filter;
+
+public class DemandaFilter {
+
+}

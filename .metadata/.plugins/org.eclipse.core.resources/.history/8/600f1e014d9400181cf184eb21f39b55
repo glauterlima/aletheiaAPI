@@ -1,0 +1,23 @@
+package br.jus.trf1.aletheia.repository.demanda;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import br.jus.trf1.aletheia.model.Demanda;
+import br.jus.trf1.aletheia.repository.filter.DemandaFilter;
+
+public class DemandaRepositoryImpl implements DemandaRepositoryQuery{
+
+	@PersistenceContext
+	private EntityManager manager;
+	
+	@Override
+	public List<Demanda> filtrar(DemandaFilter demandaFilter) {
+		
+	
+		return null;
+	}
+
+}

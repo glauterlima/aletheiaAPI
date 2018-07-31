@@ -27,6 +27,7 @@ import br.jus.trf1.aletheia.event.RecursoCriadoEvent;
 import br.jus.trf1.aletheia.exceptionhandler.AletheiaExceptionHandler.Erro;
 import br.jus.trf1.aletheia.model.Demanda;
 import br.jus.trf1.aletheia.repository.DemandaRepository;
+import br.jus.trf1.aletheia.repository.filter.DemandaFilter;
 import br.jus.trf1.aletheia.service.DemandaService;
 import br.jus.trf1.aletheia.service.exception.PessoaInexistenteOuInativaException;
 
@@ -47,8 +48,8 @@ public class DemandaResource {
 	private MessageSource messageSource;
 	
 	@GetMapping
-	public List<Demanda> listar() {
-		return demandaRepository.findAll();
+	public List<Demanda> pesquisar(DemandaFilter demandaFilter) {
+		return demandaRepository.filtrar(demandaFilter);
 	}
 	
 	@PostMapping
