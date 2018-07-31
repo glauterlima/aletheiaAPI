@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -48,8 +50,8 @@ public class DemandaResource {
 	private MessageSource messageSource;
 	
 	@GetMapping
-	public List<Demanda> pesquisar(DemandaFilter demandaFilter) {
-		return demandaRepository.filtrar(demandaFilter);
+	public Page<Demanda> pesquisar(DemandaFilter demandaFilter, Pageable pageable) {
+		return demandaRepository.filtrar(demandaFilter, pageable);
 	}
 	
 	@PostMapping
@@ -88,5 +90,5 @@ public class DemandaResource {
 		List<Erro> erros = Arrays.asList(new Erro(mensagemUsuario, mensagemDesenvolvedor));
 		return ResponseEntity.badRequest().body(erros);
 	}
-
+	
 }

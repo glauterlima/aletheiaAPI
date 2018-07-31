@@ -11,7 +11,10 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import org.apache.commons.lang3.StringUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.util.StringUtils;
 
 import br.jus.trf1.aletheia.model.Demanda;
 import br.jus.trf1.aletheia.model.Demanda_;
@@ -23,20 +26,22 @@ public class DemandaRepositoryImpl implements DemandaRepositoryQuery{
 	private EntityManager manager;
 	
 	@Override
-	public List<Demanda> filtrar(DemandaFilter demandaFilter) {
+	public Page<Demanda> filtrar(DemandaFilter demandaFilter, Pageable pageable) {
 		
 		CriteriaBuilder builder = manager.getCriteriaBuilder();
 		CriteriaQuery<Demanda> criteria = builder.createQuery(Demanda.class);
 		Root<Demanda> root = criteria.from(Demanda.class);
 		
-		//criar as restrições
 		Predicate[] predicates = criarRestricoes(demandaFilter, builder, root);
 		criteria.where(predicates);
 		
 		TypedQuery<Demanda> query = manager.createQuery(criteria);
+		adicionarRestricoesDePaginacao(query, pageable);
 	
-		return query.getResultList();
+		return new PageImpl<>(query.getResultList(), pageable, total(demandaFilter));
 	}
+
+	
 
 	private Predicate[] criarRestricoes(DemandaFilter demandaFilter, CriteriaBuilder builder, Root<Demanda> root) {
 		
@@ -55,5 +60,31 @@ public class DemandaRepositoryImpl implements DemandaRepositoryQuery{
 		
 		return predicates.toArray(new Predicate[predicates.size()]);
 	}
+	
+	private void adicionarRestricoesDePaginacao(TypedQuery<Demanda> query, Pageable pageable) {
+		int paginaAtual = pageable.getPageNumber();
+		int totalRegistrosPorPagina = pageable.getPageSize();
+		int primeiroRegistroDaPagina = paginaAtual * totalRegistrosPorPagina;
+		
+		query.setFirstResult(primeiroRegistroDaPagina);
+		query.setMaxResults(totalRegistrosPorPagina);
+		
+	}
+	
+
+	private Long total(DemandaFilter demandaFilter) {
+		CriteriaBuilder builder = manager.getCriteriaBuilder();
+		CriteriaQuery<Long> criteria = builder.createQuery(Long.class);
+		Root<Demanda> root = criteria.from(Demanda.class);
+		
+		Predicate[] predicates = criarRestricoes(demandaFilter, builder, root);
+		criteria.where(predicates);
+		
+		criteria.select(builder.count(root));
+		
+		return manager.createQuery(criteria).getSingleResult();
+	}
+
+
 
 }
