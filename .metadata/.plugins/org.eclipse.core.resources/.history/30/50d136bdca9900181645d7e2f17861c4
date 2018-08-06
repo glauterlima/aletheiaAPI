@@ -1,0 +1,6 @@
+package br.jus.trf1.aletheia.config;
+
+@EnableWebSecurity
+public class SecurityConfig {
+
+}

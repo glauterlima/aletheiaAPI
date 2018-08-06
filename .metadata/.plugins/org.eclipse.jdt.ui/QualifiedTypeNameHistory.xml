@@ -29,4 +29,7 @@
 <fullyQualifiedTypeName name="javax.persistence.criteria.Predicate"/>
 <fullyQualifiedTypeName name="org.apache.commons.lang3.StringUtils"/>
 <fullyQualifiedTypeName name="br.jus.trf1.aletheia.model.Demanda_"/>
+<fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
+<fullyQualifiedTypeName name="org.springframework.data.domain.Page"/>
+<fullyQualifiedTypeName name="org.springframework.data.domain.PageImpl"/>
 </qualifiedTypeNameHistroy>
