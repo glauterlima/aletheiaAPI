@@ -1,5 +1,0 @@
-package br.jus.trf1.aletheia.service.exception;
-
-public class PessoaInexistenteOuInativaException extends Exception {
-
-}

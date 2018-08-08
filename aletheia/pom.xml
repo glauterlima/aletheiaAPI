@@ -95,6 +95,12 @@
 			<version>5.0.12.Final</version>
 		</dependency>-->
 		
+		<!-- Oauth2 Spring security -->
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+		</dependency>
+		
 	</dependencies>	
 
 	<build>
