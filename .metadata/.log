@@ -2241,3 +2241,15 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-10 18:24:39.589
 !MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jface.text 2 0 2018-08-10 19:28:34.481
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-08-10 19:28:34.487
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-10 19:28:35.368
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-10 19:29:05.063
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
