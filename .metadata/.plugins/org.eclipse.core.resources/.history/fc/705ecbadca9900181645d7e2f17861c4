@@ -1,5 +1,0 @@
-package br.jus.trf1.aletheia.config;
-
-public class SecurityConfig {
-
-}
