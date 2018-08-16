@@ -2654,3 +2654,142 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 19:08:18.735
 !MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:01:36.454
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jface.text 2 0 2018-08-16 20:03:11.415
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-08-16 20:03:11.421
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:04:50.262
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:04:57.962
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:06:11.949
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:06:16.299
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:09:53.618
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:10:57.503
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:11:17.163
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:11:21.299
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:11:45.667
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:12:15.050
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:13:05.355
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:13:46.501
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2018-08-16 20:17:26.424
+!MESSAGE Connection to https://spring.io/blog.atom failed on sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target. Retry attempt 0 started
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.fatal(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.Handshaker.fatalSE(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(Unknown Source)
+	at sun.security.ssl.ClientHandshaker.processMessage(Unknown Source)
+	at sun.security.ssl.Handshaker.processLoop(Unknown Source)
+	at sun.security.ssl.Handshaker.process_record(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.writeRecord(Unknown Source)
+	at sun.security.ssl.AppOutputStream.write(Unknown Source)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:159)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:166)
+	at org.apache.http.impl.AbstractHttpClientConnection.doFlush(AbstractHttpClientConnection.java:272)
+	at org.apache.http.impl.AbstractHttpClientConnection.flush(AbstractHttpClientConnection.java:277)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.flush(AbstractClientConnAdapter.java:201)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:121)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:685)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:487)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(Unknown Source)
+	at sun.security.validator.PKIXValidator.engineValidate(Unknown Source)
+	at sun.security.validator.Validator.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.validate(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(Unknown Source)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(Unknown Source)
+	... 24 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(Unknown Source)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(Unknown Source)
+	at java.security.cert.CertPathBuilder.build(Unknown Source)
+	... 30 more
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:17:40.118
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:17:57.535
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:19:08.067
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:20:42.163
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:20:46.625
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:21:28.234
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:22:02.049
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:31:11.300
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:36:34.995
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:37:27.899
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:37:36.280
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:38:10.873
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:38:25.916
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:38:32.728
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:40:07.278
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2018-08-16 20:41:05.473
+!MESSAGE Hibernate JPA 2 Static-Metamodel Generator 5.0.12.Final

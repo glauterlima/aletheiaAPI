@@ -18,7 +18,10 @@ import org.springframework.util.StringUtils;
 
 import br.jus.trf1.aletheia.model.Demanda;
 import br.jus.trf1.aletheia.model.Demanda_;
+import br.jus.trf1.aletheia.model.Pessoa_;
+import br.jus.trf1.aletheia.model.Sistema_;
 import br.jus.trf1.aletheia.repository.filter.DemandaFilter;
+import br.jus.trf1.aletheia.repository.projection.ResumoDemanda;
 
 public class DemandaRepositoryImpl implements DemandaRepositoryQuery{
 
@@ -41,7 +44,27 @@ public class DemandaRepositoryImpl implements DemandaRepositoryQuery{
 		return new PageImpl<>(query.getResultList(), pageable, total(demandaFilter));
 	}
 
-	
+
+	@Override
+	public Page<ResumoDemanda> resumir(DemandaFilter demandaFilter, Pageable pageable) {
+		CriteriaBuilder builder = manager.getCriteriaBuilder();
+		CriteriaQuery<ResumoDemanda> criteria = builder.createQuery(ResumoDemanda.class);
+		Root<Demanda> root = criteria.from(Demanda.class);
+		
+		criteria.select(builder.construct(ResumoDemanda.class
+				, root.get(Demanda_.codigo), root.get(Demanda_.nome)
+				, root.get(Demanda_.sistema).get(Sistema_.nome)
+				, root.get(Demanda_.pessoa).get(Pessoa_.nome)));
+		
+		Predicate[] predicates = criarRestricoes(demandaFilter, builder, root);
+		criteria.where(predicates);
+		
+		TypedQuery<ResumoDemanda> query = manager.createQuery(criteria);
+		adicionarRestricoesDePaginacao(query, pageable);
+		
+		return new PageImpl<>(query.getResultList(), pageable, total(demandaFilter));
+	}
+
 
 	private Predicate[] criarRestricoes(DemandaFilter demandaFilter, CriteriaBuilder builder, Root<Demanda> root) {
 		
@@ -61,7 +84,7 @@ public class DemandaRepositoryImpl implements DemandaRepositoryQuery{
 		return predicates.toArray(new Predicate[predicates.size()]);
 	}
 	
-	private void adicionarRestricoesDePaginacao(TypedQuery<Demanda> query, Pageable pageable) {
+	private void adicionarRestricoesDePaginacao(TypedQuery<?> query, Pageable pageable) {
 		int paginaAtual = pageable.getPageNumber();
 		int totalRegistrosPorPagina = pageable.getPageSize();
 		int primeiroRegistroDaPagina = paginaAtual * totalRegistrosPorPagina;
@@ -84,6 +107,8 @@ public class DemandaRepositoryImpl implements DemandaRepositoryQuery{
 		
 		return manager.createQuery(criteria).getSingleResult();
 	}
+
+
 
 
 

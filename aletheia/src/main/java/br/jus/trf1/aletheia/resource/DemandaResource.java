@@ -31,6 +31,7 @@ import br.jus.trf1.aletheia.exceptionhandler.AletheiaExceptionHandler.Erro;
 import br.jus.trf1.aletheia.model.Demanda;
 import br.jus.trf1.aletheia.repository.DemandaRepository;
 import br.jus.trf1.aletheia.repository.filter.DemandaFilter;
+import br.jus.trf1.aletheia.repository.projection.ResumoDemanda;
 import br.jus.trf1.aletheia.service.DemandaService;
 import br.jus.trf1.aletheia.service.exception.PessoaInexistenteOuInativaException;
 
@@ -54,6 +55,12 @@ public class DemandaResource {
 	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_DEMANDA') and #oauth2.hasScope('read')")
 	public Page<Demanda> pesquisar(DemandaFilter demandaFilter, Pageable pageable) {
 		return demandaRepository.filtrar(demandaFilter, pageable);
+	}
+	
+	@GetMapping(params = "resumo")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_DEMANDA') and #oauth2.hasScope('read')")
+	public Page<ResumoDemanda> resumir(DemandaFilter demandaFilter, Pageable pageable) {
+		return demandaRepository.resumir(demandaFilter, pageable);
 	}
 	
 	@PostMapping
