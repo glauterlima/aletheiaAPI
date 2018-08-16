@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,11 +39,13 @@ public class SistemaResource {
 	private SistemaService sistemaService;
 	
 	@GetMapping
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_SISTEMA') and #oauth2.hasScope('read')")
 	public List<Sistema> listar() {
 		return sistemaRepository.findAll();
 	}
 	
 	@PostMapping
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_SISTEMA') and #oauth2.hasScope('write')")
 	public ResponseEntity<Sistema> criar(@Valid @RequestBody Sistema sistema, HttpServletResponse response){
 		Sistema sistemaSalvo = sistemaRepository.save(sistema);	
 		
@@ -52,18 +55,21 @@ public class SistemaResource {
 	}
 	
 	@GetMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_SISTEMA') and #oauth2.hasScope('read')")
 	public ResponseEntity<Sistema> buscarPeloCodigo(@PathVariable Long codigo){
 		Sistema sistema = sistemaRepository.findOne(codigo);
 		return sistema != null ? ResponseEntity.ok(sistema) : ResponseEntity.notFound().build();
 	}
 	
 	@DeleteMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_REMOVER_SISTEMA') and #oauth2.hasScope('write')")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable Long codigo){
 		sistemaRepository.delete(codigo);
 	}
 	
 	@PutMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_SISTEMA') and #oauth2.hasScope('write')")
 	public ResponseEntity<Sistema> atualizar(@PathVariable Long codigo, @Valid @RequestBody Sistema sistema) {
 	
 		Sistema sistemaSalvo = sistemaService.atualizar(codigo, sistema);

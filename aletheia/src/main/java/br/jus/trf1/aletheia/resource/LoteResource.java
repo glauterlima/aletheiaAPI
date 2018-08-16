@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,11 +39,13 @@ public class LoteResource {
 	private LoteService loteService;
 	
 	@GetMapping
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_LOTE') and #oauth2.hasScope('read')")
 	public List<Lote> listar() {
 		return loteRepository.findAll();
 	}
 	
 	@PostMapping
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_LOTE') and #oauth2.hasScope('write')")
 	public ResponseEntity<Lote> criar(@Valid @RequestBody Lote lote, HttpServletResponse response){
 		Lote loteSalvo = loteRepository.save(lote);	
 		
@@ -52,18 +55,21 @@ public class LoteResource {
 	}
 	
 	@GetMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_LOTE') and #oauth2.hasScope('read')")
 	public ResponseEntity<Lote> buscarPeloCodigo(@PathVariable Long codigo){
 		Lote lote = loteRepository.findOne(codigo);
 		return lote != null ? ResponseEntity.ok(lote) : ResponseEntity.notFound().build();
 	}
 	
 	@DeleteMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_REMOVER_LOTE') and #oauth2.hasScope('write')")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void remover(@PathVariable Long codigo){
 		loteRepository.delete(codigo);
 	}
 	
 	@PutMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_LOTE') and #oauth2.hasScope('write')")
 	public ResponseEntity<Lote> atualizar(@PathVariable Long codigo, @Valid @RequestBody Lote lote) {
 	
 		Lote loteSalvo = loteService.atualizar(codigo, lote);
