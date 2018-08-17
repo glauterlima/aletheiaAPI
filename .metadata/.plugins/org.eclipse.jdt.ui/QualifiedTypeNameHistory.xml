@@ -33,4 +33,6 @@
 <fullyQualifiedTypeName name="org.springframework.data.domain.Page"/>
 <fullyQualifiedTypeName name="org.springframework.data.domain.PageImpl"/>
 <fullyQualifiedTypeName name="org.springframework.security.config.http.SessionCreationPolicy"/>
+<fullyQualifiedTypeName name="br.jus.trf1.aletheia.model.Sistema_"/>
+<fullyQualifiedTypeName name="br.jus.trf1.aletheia.config.property.AletheiaProperty"/>
 </qualifiedTypeNameHistroy>
