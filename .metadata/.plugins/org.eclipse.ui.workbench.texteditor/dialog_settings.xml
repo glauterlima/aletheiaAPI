@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="source" key="selection"/>
+		<item value="plugin" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="plugin"/>
 			<item value="listar"/>
 			<item value="source"/>
 			<item value="list"/>
@@ -19,7 +20,6 @@
 			<item value="sistema"/>
 			<item value="Sistema"/>
 			<item value="demandaSalvo"/>
-			<item value="contagem"/>
 		</list>
 		<list key="replacehistory">
 			<item value="demanda"/>
