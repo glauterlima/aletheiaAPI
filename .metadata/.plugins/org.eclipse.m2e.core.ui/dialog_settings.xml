@@ -33,6 +33,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\desenvolvimento\sts\aletheia-trf1"/>
 			<item value="D:\desenvolvimento\sts"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -45,6 +46,7 @@
 		</list>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -56,6 +58,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\desenvolvimento\sts\aletheia-trf1"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

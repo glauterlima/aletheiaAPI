@@ -1,6 +1,8 @@
+CREATE SEQUENCE sistema_seq;
+
 CREATE TABLE sistema (
-	codigo BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
+	codigo BIGINT PRIMARY KEY DEFAULT NEXTVAL ('sistema_seq'),
 	nome VARCHAR(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ;
 
 INSERT INTO sistema (nome) values ('SARH');

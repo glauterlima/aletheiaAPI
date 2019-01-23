@@ -122,6 +122,8 @@
 	</section>
 	<section name="ExternalProjectImportWizard">
 	</section>
+	<section name="NewWizardAction">
+	</section>
 	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
 		<item value="false" key="FilterByLocation"/>
 		<item value="true" key="ShowStatusLine"/>

@@ -1,0 +1,13 @@
+INSERT INTO usuario (codigo, nome, email, senha) values (1, 'Administrador', 'admin@algamoney.com', '$2a$10$X607ZPhQ4EgGNaYKt3n4SONjIv9zc.VMWdEuhCuba7oLAL5IvcL5.');
+
+INSERT INTO permissao (codigo, descricao) values (9, 'ROLE_CADASTRAR_DEMANDA');
+INSERT INTO permissao (codigo, descricao) values (10, 'ROLE_REMOVER_DEMANDA');
+INSERT INTO permissao (codigo, descricao) values (11, 'ROLE_PESQUISAR_DEMANDA');
+
+INSERT INTO permissao (codigo, descricao) values (12, 'ROLE_CADASTRAR_SISTEMA');
+INSERT INTO permissao (codigo, descricao) values (13, 'ROLE_REMOVER_SISTEMA');
+INSERT INTO permissao (codigo, descricao) values (14, 'ROLE_PESQUISAR_SISTEMA');
+
+INSERT INTO permissao (codigo, descricao) values (15, 'ROLE_CADASTRAR_LOTE');
+INSERT INTO permissao (codigo, descricao) values (16, 'ROLE_REMOVER_LOTE');
+INSERT INTO permissao (codigo, descricao) values (17, 'ROLE_PESQUISAR_LOTE');

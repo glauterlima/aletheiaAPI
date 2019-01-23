@@ -18,6 +18,7 @@ import org.springframework.util.StringUtils;
 
 import br.jus.trf1.aletheia.model.Demanda;
 import br.jus.trf1.aletheia.model.Demanda_;
+import br.jus.trf1.aletheia.model.Lote_;
 import br.jus.trf1.aletheia.model.Pessoa_;
 import br.jus.trf1.aletheia.model.Sistema_;
 import br.jus.trf1.aletheia.repository.filter.DemandaFilter;
@@ -52,9 +53,21 @@ public class DemandaRepositoryImpl implements DemandaRepositoryQuery{
 		Root<Demanda> root = criteria.from(Demanda.class);
 		
 		criteria.select(builder.construct(ResumoDemanda.class
-				, root.get(Demanda_.codigo), root.get(Demanda_.nome)
+				, root.get(Demanda_.codigo)
+				, root.get(Demanda_.nome)
 				, root.get(Demanda_.sistema).get(Sistema_.nome)
-				, root.get(Demanda_.pessoa).get(Pessoa_.nome)));
+				, root.get(Demanda_.pessoa).get(Pessoa_.nome)
+				, root.get(Demanda_.lote).get(Lote_.nome)
+				, root.get(Demanda_.plataforma)
+				, root.get(Demanda_.tipo)
+				, root.get(Demanda_.totalPfBruto)
+				, root.get(Demanda_.totalPfLiquido)
+				, root.get(Demanda_.totalPfPlataforma)
+				, root.get(Demanda_.data)
+				, root.get(Demanda_.status)
+				, root.get(Demanda_.observacao)
+				, root.get(Demanda_.valor)));				
+				
 		
 		Predicate[] predicates = criarRestricoes(demandaFilter, builder, root);
 		criteria.where(predicates);

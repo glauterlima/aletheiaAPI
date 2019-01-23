@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
 org.eclipse.jdt.core.classpathVariable.ASPECTJRT_LIB=D\:/desenvolvimento/programas/sts-bundle/sts-3.8.4.RELEASE/plugins/org.aspectj.runtime_1.8.10.201703272045.jar
 org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=D\:/desenvolvimento/programas/sts-bundle/sts-3.8.4.RELEASE/
-org.eclipse.jdt.core.classpathVariable.JRE_LIB=C\:/Program Files/Java/jre1.8.0_171/lib/rt.jar
-org.eclipse.jdt.core.classpathVariable.JRE_SRC=
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=C\:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=C\:/Program Files/Java/jdk1.8.0_171/src.zip
 org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
 org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=D\:/desenvolvimento/programas/sts-bundle/sts-3.8.4.RELEASE/plugins/org.junit_4.12.0.v201504281640/
 org.eclipse.jdt.core.classpathVariable.M2_REPO=C\:/Users/tr301001/.m2/repository
