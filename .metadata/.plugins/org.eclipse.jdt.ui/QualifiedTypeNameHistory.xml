@@ -40,4 +40,5 @@
 <fullyQualifiedTypeName name="br.jus.trf1.aletheia.model.Demanda_"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException"/>
+<fullyQualifiedTypeName name="javax.persistence.SequenceGenerator"/>
 </qualifiedTypeNameHistroy>

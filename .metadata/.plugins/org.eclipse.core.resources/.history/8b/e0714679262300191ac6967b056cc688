@@ -4,7 +4,7 @@
 #spring.datasource.password=root
 
 spring.jpa.database=POSTGRESQL
-spring.datasource.url=jdbc:postgresql://172.16.2.65:9002/aletheia?createDatabaseIfNotExist=true&useSSL=false&prepareThreshold=0
+spring.datasource.url=jdbc:postgresql://172.16.2.65:9002/aletheia?createDatabaseIfNotExist=true&useSSL=false
 spring.datasource.username=aletheia
 spring.datasource.password=aletheia
 

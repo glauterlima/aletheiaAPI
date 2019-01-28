@@ -1,2 +1,0 @@
-ALTER TABLE IF EXISTS demanda
-add constraint UK_nome foreign key (nome);
